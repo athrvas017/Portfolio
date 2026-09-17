@@ -1,0 +1,142 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── Signal & Sigil Design System — CSS Variables ─────────────────────────── */
+:root {
+  /* Surface tiers */
+  --ss-background:      #111318;
+  --ss-surface-lowest:  #0c0e13;
+  --ss-surface-low:     #1a1b21;
+  --ss-surface-base:    #1e1f25;
+  --ss-surface-high:    #282a2f;
+  --ss-surface-highest: #33353a;
+  --ss-surface-bright:  #37393f;
+  /* Text */
+  --ss-on-surface:      #e2e2e9;
+  --ss-on-surface-var:  #c7c4d7;
+  /* Borders */
+  --ss-outline:         #908fa0;
+  --ss-outline-var:     #464554;
+  /* Primary — Electric Indigo */
+  --ss-primary:         #c0c1ff;
+  --ss-primary-cont:    #8083ff;
+  --ss-on-primary:      #1000a9;
+  /* Secondary — Solar Amber */
+  --ss-secondary:       #ffb95f;
+  --ss-secondary-cont:  #ee9800;
+  --ss-on-secondary:    #472a00;
+  /* Tertiary — Emerald */
+  --ss-tertiary:        #4edea3;
+  --ss-tertiary-cont:   #00885d;
+  --ss-on-tertiary:     #003824;
+  /* Legacy compat */
+  --bg:               #111318;
+  --surface:          #1e1f25;
+  --hairline:         #464554;
+  --text-primary:     #e2e2e9;
+  --text-secondary:   #c7c4d7;
+  --signal-verified:  #4edea3;
+  --signal-flagged:   #ffb95f;
+}
+
+/* ── Base resets ───────────────────────────────────────────────────────────── */
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--ss-background);
+  color: var(--ss-on-surface);
+  font-family: var(--font-inter), system-ui, sans-serif;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ── Custom scrollbar ──────────────────────────────────────────────────────── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--ss-background); }
+::-webkit-scrollbar-thumb { background: var(--ss-outline-var); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--ss-outline); }
+
+/* ── Signal & Sigil Utility Classes ───────────────────────────────────────── */
+@layer utilities {
+  /* Glassmorphic panel tiers */
+  .glass-panel-1 {
+    background: rgba(14, 18, 27, 0.75);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+  .glass-panel-2 {
+    background: rgba(21, 27, 40, 0.85);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(192, 193, 255, 0.18);
+  }
+  .glass-panel-amber {
+    background: rgba(29, 36, 54, 0.95);
+    border: 1px solid rgba(255, 185, 95, 0.45);
+    box-shadow: 0 0 35px -5px rgba(255, 185, 95, 0.15);
+  }
+
+  /* Hairline borders */
+  .hairline-neutral { border-color: rgba(255, 255, 255, 0.08); }
+  .hairline-indigo  { border-color: rgba(192, 193, 255, 0.25); }
+  .hairline-amber   { border-color: rgba(255, 185, 95, 0.35); }
+
+  /* Ambient glows */
+  .glow-indigo { box-shadow: 0 0 30px rgba(192, 193, 255, 0.20); }
+  .glow-amber  { box-shadow: 0 0 35px -5px rgba(255, 185, 95, 0.25); }
+  .glow-emerald{ box-shadow: 0 0 20px rgba(78, 222, 163, 0.15); }
+
+  /* Label-caps typography */
+  .label-caps {
+    font-family: var(--font-jetbrains-mono), monospace;
+    font-size: 11px;
+    font-weight: 600;
+    line-height: 14px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  /* Telemetry-code typography */
+  .telemetry-code {
+    font-family: var(--font-jetbrains-mono), monospace;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 18px;
+  }
+
+  /* Telemetry-metric typography */
+  .telemetry-metric {
+    font-family: var(--font-jetbrains-mono), monospace;
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 28px;
+    letter-spacing: -0.02em;
+  }
+}
+
+/* ── Keyframe Animations ───────────────────────────────────────────────────── */
+@keyframes glowIndigo {
+  0%, 100% { box-shadow: 0 0 20px rgba(192, 193, 255, 0.12); }
+  50%       { box-shadow: 0 0 40px rgba(192, 193, 255, 0.30); }
+}
+
+@keyframes statusPulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: 0.7; transform: scale(0.95); }
+}
+
+/* ── Reduced Motion ────────────────────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

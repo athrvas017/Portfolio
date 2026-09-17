@@ -1,0 +1,26 @@
+{
+  "name": "Athrva Sarade",
+  "role": "Computer Engineering Student @ VJTI | Systems & AI/ML",
+  "oneLiner": "Engineering systems that detect, route, and reason: from phishing classification pipelines and graph risk engines to multi-agent architectures.",
+  "bio": "B.Tech Computer Engineering undergraduate at VJTI Mumbai (batch 2024–2028). I build high-integrity software systems backed by real graph algorithms, machine learning classifiers, and transactional backends, with a focus on open-source engineering and GSoC opportunities.",
+  "statusLine": "GSoC 2026 interest · MedLearn RAG engine in progress · VJTI Comp Eng '28",
+  "location": "Mumbai, India",
+  "email": "athrvas017@gmail.com",
+  "github": "https://github.com/athrvas017",
+  "linkedin": "https://linkedin.com/in/athrva-sarade",
+  "resumePath": "/resume.pdf",
+  "metrics": [
+    { "label": "Academic Standing", "value": "7.74 / 10", "sub": "VJTI Computer Eng" },
+    { "label": "Hackathon Podiums", "value": "2× WINNER", "sub": "SYN3RGY · Routing Rush" },
+    { "label": "Open Source", "value": "Hacktoberfest", "sub": "Super Contributor '25" },
+    { "label": "Status", "value": "OPEN S25", "sub": "Internship / GSoC Ready" }
+  ],
+  "focusAreas": [
+    "Graph Algorithms",
+    "ML Classifiers",
+    "RAG Systems",
+    "REST APIs",
+    "Multi-Agent Pipelines",
+    "Transactional Backends"
+  ]
+}
