@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useRef, useCallback, useMemo, useEffect } from "react";
+import { createPortal } from "react-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   Code2,
@@ -190,33 +191,81 @@ const HoverCard: React.FC<{ hover: HoverState }> = ({ hover }) => {
   const { node, sx, sy } = hover;
   const cat = node.category;
   const skill = node.skill;
+  const cardRef = useRef<HTMLDivElement>(null);
 
-  // Keep pop-up card within browser viewport
-  const [pos, setPos] = useState({ x: sx + 16, y: sy - 50 });
+  // Compute safely-bounded screen coordinates
+  const computePos = useCallback(
+    (cardW: number, cardH: number) => {
+      if (typeof window === "undefined") return { x: sx + 18, y: sy - 50 };
 
+      const vw = window.innerWidth;
+      const vh = window.innerHeight;
+      const PADDING = 16;
+      const TOP_NAV_OFFSET = 80; // Keep clear of fixed top navbar / HUD
+
+      // Horizontal: Prefer right of node/cursor, flip left if it would cross viewport right edge
+      let x = sx + 18;
+      if (x + cardW > vw - PADDING) {
+        x = sx - cardW - 18;
+      }
+      // Hard clamp within left & right viewport bounds
+      x = Math.max(PADDING, Math.min(vw - cardW - PADDING, x));
+
+      // Vertical: Center card vertically with respect to the node/cursor
+      let y = sy - cardH / 2;
+      // Hard clamp between top navbar and bottom of viewport
+      y = Math.max(TOP_NAV_OFFSET, Math.min(vh - cardH - PADDING, y));
+
+      return { x, y };
+    },
+    [sx, sy]
+  );
+
+  const initialEstimatedHeight = node.type === "category" ? 150 : 210;
+  const [pos, setPos] = useState(() => computePos(280, initialEstimatedHeight));
+
+  // Re-measure exact card dimensions after DOM render and adjust position
   useEffect(() => {
-    const cardW = 260;
-    const cardH = node.type === "category" ? 140 : 180;
-    const vw = typeof window !== "undefined" ? window.innerWidth : 1200;
-    const vh = typeof window !== "undefined" ? window.innerHeight : 900;
-    const x = sx + 18 + cardW > vw ? Math.max(8, sx - cardW - 18) : sx + 18;
-    const y = Math.max(12, Math.min(vh - cardH - 12, sy - cardH / 2));
-    setPos({ x, y });
-  }, [sx, sy, node.type]);
+    if (cardRef.current) {
+      const rect = cardRef.current.getBoundingClientRect();
+      const updated = computePos(rect.width || 280, rect.height || initialEstimatedHeight);
+      setPos(updated);
+    }
+  }, [computePos, initialEstimatedHeight]);
 
-  return (
+  // Recalculate on window resize
+  useEffect(() => {
+    const handleRecalc = () => {
+      if (cardRef.current) {
+        const rect = cardRef.current.getBoundingClientRect();
+        setPos(computePos(rect.width || 280, rect.height || initialEstimatedHeight));
+      }
+    };
+    window.addEventListener("resize", handleRecalc);
+    return () => window.removeEventListener("resize", handleRecalc);
+  }, [computePos, initialEstimatedHeight]);
+
+  if (typeof document === "undefined") return null;
+
+  return createPortal(
     <motion.div
-      className="fixed z-50 pointer-events-none select-none"
-      style={{ left: pos.x, top: pos.y, width: 260 }}
-      initial={{ opacity: 0, scale: 0.9, y: 6 }}
+      ref={cardRef}
+      className="fixed z-[9999] pointer-events-none select-none"
+      style={{
+        left: `${pos.x}px`,
+        top: `${pos.y}px`,
+        width: 280,
+        maxWidth: "calc(100vw - 32px)",
+      }}
+      initial={{ opacity: 0, scale: 0.94, y: 4 }}
       animate={{ opacity: 1, scale: 1, y: 0 }}
-      exit={{ opacity: 0, scale: 0.9, y: 6 }}
-      transition={{ duration: 0.15, ease: "easeOut" }}
+      exit={{ opacity: 0, scale: 0.94, y: 4 }}
+      transition={{ duration: 0.12, ease: "easeOut" }}
     >
       <div
-        className="rounded-xl overflow-hidden"
+        className="rounded-xl overflow-hidden shadow-2xl"
         style={{
-          background: "rgba(14,16,21,0.97)",
+          background: "rgba(14,16,21,0.98)",
           border: `1px solid ${node.color}50`,
           boxShadow: `0 12px 40px -8px rgba(0,0,0,0.85), 0 0 24px -6px ${node.glowColor}`,
           backdropFilter: "blur(18px)",
@@ -350,7 +399,8 @@ const HoverCard: React.FC<{ hover: HoverState }> = ({ hover }) => {
           )}
         </div>
       </div>
-    </motion.div>
+    </motion.div>,
+    document.body
   );
 };
 
@@ -401,7 +451,7 @@ const RootNode: React.FC<{
   isHovered: boolean;
   isSelected: boolean;
   onClick: () => void;
-  onHoverEnter: () => void;
+  onHoverEnter: (e?: React.MouseEvent) => void;
   onHoverLeave: () => void;
 }> = ({ x, y, isHovered, isSelected, onClick, onHoverEnter, onHoverLeave }) => (
   <g
@@ -465,7 +515,7 @@ const CategoryNode: React.FC<{
   isHovered: boolean;
   isSelected: boolean;
   onClick: () => void;
-  onHoverEnter: () => void;
+  onHoverEnter: (e?: React.MouseEvent) => void;
   onHoverLeave: () => void;
 }> = ({ node, isExpanded, isHovered, isSelected, onClick, onHoverEnter, onHoverLeave }) => {
   const cat = node.category!;
@@ -591,7 +641,7 @@ const SkillNode: React.FC<{
   isHovered: boolean;
   isSelected: boolean;
   onClick: () => void;
-  onHoverEnter: () => void;
+  onHoverEnter: (e?: React.MouseEvent) => void;
   onHoverLeave: () => void;
 }> = ({ node, isHovered, isSelected, onClick, onHoverEnter, onHoverLeave }) => {
   const skill = node.skill!;
@@ -1172,20 +1222,31 @@ export const SkillGraph: React.FC<SkillGraphProps> = ({
     setExpanded(new Set());
   }, []);
 
-  // Convert SVG coordinates to screen coordinates for tooltip positioning
+  // Convert SVG coordinates to screen coordinates for tooltip positioning fallback
   const nodeToScreen = useCallback((nodeX: number, nodeY: number) => {
     const svgEl = svgRef.current;
     if (!svgEl) return { sx: 0, sy: 0 };
+    const ctm = svgEl.getScreenCTM();
+    if (!ctm) return { sx: 0, sy: 0 };
     const pt = svgEl.createSVGPoint();
     pt.x = nodeX;
     pt.y = nodeY;
-    const screenPt = pt.matrixTransform(svgEl.getScreenCTM()!);
+    const screenPt = pt.matrixTransform(ctm);
     return { sx: screenPt.x, sy: screenPt.y };
   }, []);
 
   const handleHoverEnter = useCallback(
-    (node: NodeData) => {
-      const { sx, sy } = nodeToScreen(node.x, node.y);
+    (node: NodeData, e?: React.MouseEvent) => {
+      let sx = 0;
+      let sy = 0;
+      if (e && typeof e.clientX === "number" && typeof e.clientY === "number" && (e.clientX > 0 || e.clientY > 0)) {
+        sx = e.clientX;
+        sy = e.clientY;
+      } else {
+        const coords = nodeToScreen(node.x, node.y);
+        sx = coords.sx;
+        sy = coords.sy;
+      }
       setHovered({ node, sx, sy });
     },
     [nodeToScreen]
@@ -1194,6 +1255,16 @@ export const SkillGraph: React.FC<SkillGraphProps> = ({
   const handleHoverLeave = useCallback(() => {
     setHovered(null);
   }, []);
+
+  // Dismiss tooltip preview cleanly if the user scrolls the page
+  useEffect(() => {
+    if (!hovered) return;
+    const handleScroll = () => {
+      setHovered(null);
+    };
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [hovered]);
 
   // Node click handler: selects node for side inspector (no modal popup)
   const handleNodeClick = useCallback(
@@ -1335,7 +1406,7 @@ export const SkillGraph: React.FC<SkillGraphProps> = ({
                   isHovered={hovered?.node.id === "root"}
                   isSelected={selectedNode.id === "root"}
                   onClick={() => handleNodeClick(rootNode)}
-                  onHoverEnter={() => handleHoverEnter(rootNode)}
+                  onHoverEnter={(e) => handleHoverEnter(rootNode, e)}
                   onHoverLeave={handleHoverLeave}
                 />
               )}
@@ -1349,7 +1420,7 @@ export const SkillGraph: React.FC<SkillGraphProps> = ({
                   isHovered={hovered?.node.id === catNode.id}
                   isSelected={selectedNode.id === catNode.id}
                   onClick={() => handleNodeClick(catNode)}
-                  onHoverEnter={() => handleHoverEnter(catNode)}
+                  onHoverEnter={(e) => handleHoverEnter(catNode, e)}
                   onHoverLeave={handleHoverLeave}
                 />
               ))}
@@ -1362,7 +1433,7 @@ export const SkillGraph: React.FC<SkillGraphProps> = ({
                   isHovered={hovered?.node.id === skillNode.id}
                   isSelected={selectedNode.id === skillNode.id}
                   onClick={() => handleNodeClick(skillNode)}
-                  onHoverEnter={() => handleHoverEnter(skillNode)}
+                  onHoverEnter={(e) => handleHoverEnter(skillNode, e)}
                   onHoverLeave={handleHoverLeave}
                 />
               ))}
