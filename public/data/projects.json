@@ -1,0 +1,213 @@
+[
+  {
+    "slug": "netshield",
+    "title": "NetShield",
+    "oneLiner": "Real-time phishing URL detection & security classification engine.",
+    "status": "Shipped",
+    "role": "Team Lead, CodeGuardians",
+    "collaborators": "4-member team (Community of Coders)",
+    "repoUrl": "https://github.com/athrvas017/Code_Guardians",
+    "liveUrl": "https://netshield-67le.onrender.com",
+    "tags": [
+      "AI/ML",
+      "Systems/Backend",
+      "Web"
+    ],
+    "featured": true,
+    "featuredOrder": 2,
+    "problem": "Phishing websites rapidly mutate domain patterns, making traditional static blocklists ineffective against zero-day social engineering threats.",
+    "approach": "Engineered a multi-stage URL inspection pipeline extracting lexical features, structural anomalies, and real-time host reputation to classify threats before browser execution.",
+    "architectureDetails": [
+      "Lexical feature extractor parsing path entropy, subdomains, and obfuscated tokens",
+      "Random Forest & XGBoost classification models tuned for low false-positive rates",
+      "Asynchronous REST API deployment hosted on Render with instant threat scoring"
+    ],
+    "outcomes": [
+      "Deployed live production service at netshield-67le.onrender.com",
+      "Led 4-member CodeGuardians developer team from architecture to deployment"
+    ]
+  },
+  {
+    "slug": "supplylens360",
+    "title": "SupplyLens360",
+    "oneLiner": "Multi-tier supply chain risk intelligence & dependency graph engine.",
+    "status": "Shipped",
+    "role": "Team Member, Team Merge Origins",
+    "collaborators": "SYN3RGY 3.0 Hackathon team",
+    "repoUrl": "https://github.com/athrvas017/SupplyChain360",
+    "liveUrl": null,
+    "tags": [
+      "Systems/Backend",
+      "AI/ML",
+      "Hackathon"
+    ],
+    "featured": false,
+    "problem": "Modern manufacturing supply chains lack visibility beyond Tier-1 suppliers, making it impossible to forecast systemic bottlenecks during regional disruptions.",
+    "approach": "Constructed a directed acyclic graph (DAG) representation of multi-tier supplier networks coupled with D3.js interactive traversal to simulate tier-N failure cascades.",
+    "architectureDetails": [
+      "Graph traversal algorithm evaluating node centrality and critical path vulnerability",
+      "Interactive D3.js network visualizer highlighting affected downstream nodes",
+      "Real-time risk scoring matrix aggregating geographic and supplier dependency weights"
+    ],
+    "outcomes": [
+      "Awarded 2nd Runner-Up at SYN3RGY 3.0 Hackathon",
+      "Built working interactive multi-tier graph simulation under hackathon constraints"
+    ]
+  },
+  {
+    "slug": "carechain",
+    "title": "CareChain",
+    "oneLiner": "Automated medical resource allocation & donation-matching classifier.",
+    "status": "Shipped",
+    "role": "Co-built",
+    "collaborators": "Siyam Bubere",
+    "repoUrl": "https://github.com/athrvas017/CareChain",
+    "liveUrl": null,
+    "tags": [
+      "Systems/Backend",
+      "Web",
+      "AI/ML"
+    ],
+    "featured": false,
+    "problem": "Emergency healthcare donation platforms struggle with delayed request matching, leading to misallocated critical medical supplies.",
+    "approach": "Designed a request routing engine that categorizes inventory urgency, geographic proximity, and donor offers for priority fulfillment.",
+    "architectureDetails": [
+      "Rule-based classification & priority queue algorithm for urgent medical dispatch",
+      "Modular full-stack web architecture separating transaction logic from inventory views",
+      "RESTful API design for supplier verification and donation claim tracking"
+    ],
+    "outcomes": [
+      "Co-engineered functional end-to-end medical dispatch portal with Siyam Bubere",
+      "Verified GitHub source code repository published"
+    ]
+  },
+  {
+    "slug": "nextstop",
+    "title": "NextStop",
+    "oneLiner": "High-concurrency railway booking & reservation state machine.",
+    "status": "Shipped",
+    "role": "Solo Project",
+    "collaborators": null,
+    "repoUrl": "https://github.com/athrvas017/Railway_Reservation_management",
+    "liveUrl": null,
+    "tags": [
+      "Systems/Backend"
+    ],
+    "featured": false,
+    "problem": "Railway booking systems require atomic seat reservations and deterministic state management during concurrent booking and cancellation transactions.",
+    "approach": "Developed a relational backend schema and transaction state machine enforcing ACID guarantees across station routing, seat allocation, and waitlists.",
+    "architectureDetails": [
+      "Transactional state engine managing Reserved, Waitlisted, and Cancelled transitions",
+      "Optimized query indexing for station route lookups and seat availability checks",
+      "Clean separation of administrative schedules and passenger booking portals"
+    ],
+    "outcomes": [
+      "Solo architectural build managing end-to-end reservation lifecycle logic",
+      "Verified source repository available on GitHub"
+    ]
+  },
+  {
+    "slug": "zentrix",
+    "title": "Zentrix",
+    "oneLiner": "Clinically-inspired cognitive diagnostic engine using Fault Tree Analysis & Knowledge DAGs.",
+    "status": "In Progress",
+    "role": "Group Project",
+    "collaborators": null,
+    "repoUrl": "https://github.com/athrvas017/Zentrix",
+    "liveUrl": null,
+    "tags": [
+      "AI/ML",
+      "Systems/Backend"
+    ],
+    "featured": true,
+    "featuredOrder": 3,
+    "problem": "Traditional learning systems fail to mathematically identify precise student cognitive misconceptions, often relying on static question banks or hallucination-prone LLM tutors.",
+    "approach": "Engineered a clinically-inspired diagnostic engine using Fault Tree Analysis (FTA), Knowledge DAGs, and Item Response Theory (IRT) to adaptively evaluate student ability.",
+    "architectureDetails": [
+      "Built a clinically-inspired diagnostic engine using Fault Tree Analysis (FTA) and Knowledge DAGs to mathematically identify student cognitive gaps with zero hallucinations.",
+      "Implemented Item Response Theory (IRT) for latent ability estimation, enabling the system to select questions calibrated to each student’s edge of knowledge.",
+      "Orchestrated remediation logic via a Behavior Tree sequencer that dynamically switches between Drill, Remedy, and Advance modes based on real-time fatigue metrics and calibration state."
+    ],
+    "outcomes": [
+      "Fault Tree Analysis (FTA) & Knowledge DAGs mathematically isolating cognitive gaps with zero hallucinations",
+      "Item Response Theory (IRT) calibration selecting optimal questions at student's edge of knowledge",
+      "Behavior Tree sequencer orchestrating adaptive Drill, Remedy, and Advance modes"
+    ]
+  },
+  {
+    "slug": "medlearn",
+    "title": "MedLearn",
+    "oneLiner": "Intelligent medical domain learning & RAG query system (In Progress).",
+    "status": "In Progress",
+    "role": "Solo Project",
+    "collaborators": null,
+    "repoUrl": "https://github.com/athrvas017/MedLearn",
+    "liveUrl": null,
+    "tags": [
+      "AI/ML"
+    ],
+    "featured": true,
+    "featuredOrder": 1,
+    "problem": "Clinical reference documentation is dense and domain-heavy, making rapid point-of-care query retrieval prone to context loss.",
+    "approach": "Building a domain-specific retrieval-augmented generation (RAG) system utilizing vector embeddings optimized for medical terminology.",
+    "architectureDetails": [
+      "Chunking pipeline tailored for clinical papers and treatment protocols",
+      "Vector store retrieval index with hybrid dense/sparse search scoring",
+      "Citation-backed answer generator designed to ground model responses in source texts"
+    ],
+    "outcomes": [
+      "Active development phase — evaluation benchmarking under construction",
+      "Public repository hosted at https://github.com/athrvas017/MedLearn"
+    ]
+  },
+  {
+    "slug": "forum-website",
+    "title": "Forum Website",
+    "oneLiner": "Collaborative discussion portal with dynamic thread indexing.",
+    "status": "Code Coming Soon",
+    "role": "Solo Project (started as first-year group project)",
+    "collaborators": null,
+    "repoUrl": null,
+    "liveUrl": null,
+    "tags": [
+      "Web",
+      "Systems/Backend"
+    ],
+    "featured": false,
+    "problem": "Peer-to-peer technical knowledge sharing requires structured topic organization, searchability, and scalable post categorization.",
+    "approach": "Built a web discussion engine featuring hierarchical category navigation, user posting privileges, and responsive thread rendering.",
+    "architectureDetails": [
+      "Relational data model linking users, categories, threads, and threaded replies",
+      "Session authentication and role-based moderation authorization",
+      "Client-side search filtering across thread titles and tags"
+    ],
+    "outcomes": [
+      "Evolved from a VJTI 1st-year engineering course project into an expanded codebase"
+    ]
+  },
+  {
+    "slug": "justicegrid",
+    "title": "JusticeGrid",
+    "oneLiner": "Legal tech workflow automation & case intake platform.",
+    "status": "Code Coming Soon",
+    "role": "Hackathon Build",
+    "collaborators": "Team project",
+    "repoUrl": null,
+    "liveUrl": null,
+    "tags": [
+      "Web",
+      "Hackathon"
+    ],
+    "featured": false,
+    "problem": "Legal aid intake processes suffer from manual document sorting and slow client request triage.",
+    "approach": "Designed a streamlined digital intake dashboard that categorizes case details and routes urgent filings to legal advisors.",
+    "architectureDetails": [
+      "Form intake workflow with dynamic field validation based on legal case classification",
+      "Structured dashboard view for case triaging and status updates",
+      "Clean UI layout prioritizing accessibility and mobile intake clarity"
+    ],
+    "outcomes": [
+      "Built during hackathon; repository preparing for public release"
+    ]
+  }
+]

@@ -1,0 +1,36 @@
+[
+  {
+    "category": "Languages",
+    "skills": ["Python", "C/C++", "TypeScript", "JavaScript", "SQL", "HTML/CSS"]
+  },
+  {
+    "category": "AI & ML",
+    "skills": [
+      "PyTorch",
+      "Scikit-learn",
+      "XGBoost",
+      "RAG Architecture",
+      "D3.js (Graph Traversal)",
+      "Agentic Pipelines"
+    ]
+  },
+  {
+    "category": "Systems & Backend",
+    "skills": [
+      "Node.js",
+      "Express",
+      "FastAPI",
+      "REST APIs",
+      "Graph Algorithms (BFS/DFS, DAGs)",
+      "Relational Databases"
+    ]
+  },
+  {
+    "category": "Frontend",
+    "skills": ["React", "Next.js", "Tailwind CSS", "Framer Motion", "HTML5/CSS3"]
+  },
+  {
+    "category": "Tools & Infrastructure",
+    "skills": ["Git", "GitHub", "Linux / Bash", "Render", "Vercel", "VS Code"]
+  }
+]

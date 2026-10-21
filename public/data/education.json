@@ -1,0 +1,23 @@
+[
+  {
+    "institution": "Veermata Jijabai Technological Institute (VJTI), Mumbai",
+    "degree": "B.Tech in Computer Engineering",
+    "period": "2024 – 2028",
+    "grade": "CGPA: 7.74 / 10.0",
+    "details": "Core coursework: Data Structures & Algorithms, Operating Systems, Database Management Systems, Computer Networks, Software Engineering."
+  },
+  {
+    "institution": "Vidya Niketan Higher Secondary School",
+    "degree": "HSC (Higher Secondary Certificate - Class XII)",
+    "period": "2022 – 2024",
+    "grade": "84.33%",
+    "details": "Focus in Physics, Chemistry, and Mathematics."
+  },
+  {
+    "institution": "Rushikul Gurukul English Medium High School",
+    "degree": "SSC (Secondary School Certificate - Class X)",
+    "period": "2012 - 2022",
+    "grade": "89.60%",
+    "details": "Building Founadation Skills"
+  }
+]

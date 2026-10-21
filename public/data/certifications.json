@@ -1,0 +1,128 @@
+[
+  {
+    "title": "Agentic AI with LangChain and LangGraph",
+    "issuer": "IBM / Coursera",
+    "category": "AI & ML",
+    "date": "2025",
+    "description": "Built production-grade agentic systems using LangChain and LangGraph — multi-step reasoning loops, tool calling, and stateful agent graphs.",
+    "pdfPath": "/certificates/Agentic AI with LangChain and LangGraph Certificate.pdf",
+    "issuerColor": "#006699"
+  },
+  {
+    "title": "Fundamentals of Building AI Agents",
+    "issuer": "IBM / Coursera",
+    "category": "AI & ML",
+    "date": "2025",
+    "description": "Core concepts of agent architectures: planning, memory, tool use, and orchestration patterns for autonomous AI systems.",
+    "pdfPath": "/certificates/Fundamentals of Building AI Agents Certififcate.pdf",
+    "issuerColor": "#006699"
+  },
+  {
+    "title": "Advanced RAG with Vector Databases and Retrievers",
+    "issuer": "IBM / Coursera",
+    "category": "AI & ML",
+    "date": "2025",
+    "description": "Advanced retrieval-augmented generation: hybrid search, dense retrievers, re-ranking pipelines, and vector store optimisation.",
+    "pdfPath": "/certificates/Advanced RAG with Vector Databases and Retrievers Certificate.pdf",
+    "issuerColor": "#006699"
+  },
+  {
+    "title": "Vector Databases for RAG — Introduction",
+    "issuer": "IBM / Coursera",
+    "category": "AI & ML",
+    "date": "2025",
+    "description": "Hands-on with vector embeddings, semantic search, ANN indexing (HNSW/IVF), and integrating vector stores into RAG pipelines.",
+    "pdfPath": "/certificates/Vector Databases for RAG An Introduction Certificate.pdf",
+    "issuerColor": "#006699"
+  },
+  {
+    "title": "Build RAG Applications — Get Started",
+    "issuer": "IBM / Coursera",
+    "category": "AI & ML",
+    "date": "2025",
+    "description": "End-to-end RAG application development: document ingestion, chunking strategies, embedding models, and generation with LLMs.",
+    "pdfPath": "/certificates/Build RAG Applications Get Started Certificate.pdf",
+    "issuerColor": "#006699"
+  },
+  {
+    "title": "Develop Generative AI Applications — Get Started",
+    "issuer": "IBM / Coursera",
+    "category": "AI & ML",
+    "date": "2025",
+    "description": "Practical GenAI application development: prompt engineering, API integration, and production-ready deployment patterns.",
+    "pdfPath": "/certificates/Develop Generative AI Applications Get Started Certificate.pdf",
+    "issuerColor": "#006699"
+  },
+  {
+    "title": "Build Multimodal Generative AI Applications",
+    "issuer": "IBM / Coursera",
+    "category": "AI & ML",
+    "date": "2025",
+    "description": "Multimodal GenAI pipelines combining text, image, and structured data for rich, context-aware AI applications.",
+    "pdfPath": "/certificates/Build Multimodal Generative AI Applications Certificate.pdf",
+    "issuerColor": "#006699"
+  },
+  {
+    "title": "Python for Data Science, AI & Development",
+    "issuer": "IBM / Coursera",
+    "category": "Data Science",
+    "date": "2024",
+    "description": "End-to-end Python training for data science workflows: NumPy, Pandas, Matplotlib, and REST API consumption.",
+    "pdfPath": "/certificates/Python for Data Science, AI & Development Certificate.pdf",
+    "issuerColor": "#006699"
+  },
+  {
+    "title": "Data Science Bootcamp",
+    "issuer": "GeeksforGeeks",
+    "category": "Data Science",
+    "date": "2024",
+    "description": "Comprehensive data science training covering EDA, statistical analysis, ML fundamentals, and real-world project implementation.",
+    "pdfPath": "/certificates/Data Science BootCamp Certificate.pdf",
+    "issuerColor": "#2F8D46"
+  },
+  {
+    "title": "TensorFlow Fundamentals",
+    "issuer": "GeeksforGeeks",
+    "category": "AI & ML",
+    "date": "2024",
+    "description": "Practical TensorFlow training: neural network design, model training pipelines, and deployment with Keras.",
+    "pdfPath": "/certificates/TensorFlow_certificate.pdf",
+    "issuerColor": "#FF6F00"
+  },
+  {
+    "title": "C++ Programming",
+    "issuer": "GeeksforGeeks",
+    "category": "Systems",
+    "date": "2024",
+    "description": "Advanced C++ covering OOP, STL, memory management, templates, and systems-level programming patterns.",
+    "pdfPath": "/certificates/C++ Certificate.pdf",
+    "issuerColor": "#2F8D46"
+  },
+  {
+    "title": "Python Programming",
+    "issuer": "GeeksforGeeks",
+    "category": "Systems",
+    "date": "2024",
+    "description": "Core Python mastery: data structures, functional patterns, file I/O, and scripting for automation and backend tasks.",
+    "pdfPath": "/certificates/Python Certificate.pdf",
+    "issuerColor": "#2F8D46"
+  },
+  {
+    "title": "Exploring Networking with Cisco Packet Tracer",
+    "issuer": "Cisco",
+    "category": "Systems",
+    "date": "2026",
+    "description": "Learned fundame ntal networking concepts and practiced configuring routers, switches, and end devices using Cisco Packet Tracer.",
+    "pdfPath": "/certificates/Exploring_Networking_with_Cisco_Packet_Tracer_certificate_athrvas017-gmail-com_613c6a6b-ba6a-4f5b-b777-8e4376880b70.pdf",
+    "issuerColor": "#2F8D46"
+  },
+  {
+    "title": "Getting Started with Cisco Packet Tracer",
+    "issuer": "Cisco",
+    "category": "Systems",
+    "date": "2026",
+    "description": "Learne  d to use Cisco Packet Tracer for building and simulating simple networks with devices, connections, and basic configurations.",
+    "pdfPath": "/certificates/Getting_Started_with_Cisco_Packet_Tracer_certificate_athrvas017-gmail-com_c045e4f9-923d-4e08-9edb-86eacd8c1192.pdf",
+    "issuerColor": "#2F8D46"
+  }
+]

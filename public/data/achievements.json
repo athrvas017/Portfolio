@@ -1,0 +1,51 @@
+[
+  {
+    "title": "SYN3RGY 3.0 Hackathon — 2nd Runner-Up",
+    "roleOrContext": "Team Merge Origins (SupplyLens360)",
+    "date": "2024",
+    "description": "Awarded 2nd Runner-Up for designing and implementing an interactive multi-tier supply chain dependency graph traversal engine.",
+    "links": [
+      { "label": "SupplyLens360 Case Study", "url": "/projects/supplylens360" },
+      { "label": "GitHub Repository", "url": "https://github.com/athrvas017/SupplyChain360" }
+    ]
+  },
+  {
+    "title": "Hacktoberfest 2025 Super Contributor",
+    "roleOrContext": "Open Source Contributor",
+    "date": "2025",
+    "description": "Successfully submitted and merged code contributions across high-signal open-source repositories.",
+    "links": [
+      { "label": "lemony-ai/cascadeflow", "url": "https://github.com/lemony-ai/cascadeflow" },
+      { "label": "juspay/hyperswitch-prism", "url": "https://github.com/juspay/hyperswitch-prism" },
+      { "label": "pixel-museum/css-art-museum", "url": "https://github.com/pixel-museum/css-art-museum" }
+    ]
+  },
+  {
+    "title": "Routing Rush — 3rd Place",
+    "roleOrContext": "Competitive Systems / Routing Challenge",
+    "date": "2024",
+    "description": "Secured 3rd place in algorithmic network routing and path optimization competition.",
+    "links": [
+      { "label": "NextStop Routing Project", "url": "/projects/nextstop" },
+      { "label": "GitHub Repository", "url": "https://github.com/athrvas017/NextStop" }
+    ]
+  },
+  {
+    "title": "MHTCET & JEE Entrance Percentiles",
+    "roleOrContext": "State & National Entrance Examinations",
+    "date": "2024",
+    "description": "Achieved top competitive percentiles qualifying for Computer Engineering admission at VJTI Mumbai.",
+    "links": [
+      { "label": "VJTI Mumbai", "url": "https://vjti.ac.in" }
+    ]
+  },
+  {
+    "title": "Technical Certifications (GeeksforGeeks & IBM)",
+    "roleOrContext": "Certified Competencies",
+    "date": "2024 - 2025",
+    "description": "Completed rigorous technical coursework in Data Structures, Algorithms, and Systems Engineering.",
+    "links": [
+      { "label": "Explore Skills & Matrix", "url": "/skills" }
+    ]
+  }
+]
