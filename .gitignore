@@ -21,9 +21,10 @@ npm-debug.log*
 .DS_Store
 Thumbs.db
 
-# markdown files (except README)
+# markdown files (except README and HCI report)
 *.md
 !README.md
+!HCI_PORTFOLIO_ANALYSIS.md
 
 # build info
 tsconfig.tsbuildinfo
